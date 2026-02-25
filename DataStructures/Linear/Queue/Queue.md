@@ -31,10 +31,22 @@ namespace my_td
     };
 
     template<typename T>
-    struct FIFO{//выбрал именно стуктуру,а не класс,отличается просто полями по дефолту,она публичная,но для инкапсуляции можно писать на основе классов,но я не хочу,чтобы лишний раз не писать конструкторы
+    class FIFO{
         node<T> *front = nullptr;
         node<T> *back = nullptr;
+    public:
+        FIFO() : front(nullptr), back(nullptr) {}
 
+        ~FIFO() {
+            while (!is_empty()) {
+                node<T>* tmp = dequeue();
+                delete tmp;
+            }
+        }
+        T* peek() const {
+            return front ? &(front->value):   nullptr;
+        }
+        
         node<T> *dequeue(void){
             if(!front)
                 return nullptr;
