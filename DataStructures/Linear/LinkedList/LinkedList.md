@@ -79,7 +79,7 @@ struct List
     ListNode<T>* lastNode;
     
     List() : firstNode(nullptr), lastNode(nullptr) {}
-    ~List() {
+    ~List() { //в старой версии нет деструктора добавил чтобы избежать утечек памяти и не сидеть и плакать на valgrid
         ListNode<T>* p = firstNode;
         while (p) {
             ListNode<T>* tmp = p;
