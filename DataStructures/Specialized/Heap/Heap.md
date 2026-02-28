@@ -40,8 +40,73 @@
 ### *Родитель → (i - 1) // 2*
 #### *Правый ребёнок → 2\*i + 2*
 
+```python 
+#готовая библиотека
+import heapq
+
+heap = []
+heapq.heappush(heap, 10)
+heapq.heappush(heap, 3)
+heapq.heappush(heap, 7)
+
+print(heap)  # [3, 10, 7]
+```
+
+
+
 ```cpp
 
+
+namespace my_hp{
+#include <iostream>
+#include <vector>
+#include <type_traits>
+#include <stdexcept>
+
+    template<typename T>
+    class heap{
+
+        std::vector<T> hp;
+        void sift_up(size_t index) {
+        while (index > 0) {
+            size_t parent = (index - 1) / 2;//parent id
+            if (hp[index] < hp[parent]) { 
+                std::swap(hp[index], hp[parent]);/* меняем родителя и ребенка местами, если родитель больше по значению */
+                index = parent;
+            } else {
+                break;
+            }
+            /* сортируем так,пока все не будут в своих местах,это будет вызиватся каждый раз,когда пушим новое значение,а чтение уже ваша проблема */
+        }
+    }
+
+    public:
+        heap() = default;
+        heap(const T& value){
+            push_heap(value);
+        }
+        void push_heap(const T& value) {
+            static_assert(std::is_arithmetic<T>::value, 
+                      "T must be a numeric type");
+            hp.push_back(value);
+            sift_up(hp.size() - 1);
+        }
+        void pop_heap(const T& value) {
+            if (hp.empty()) return;
+            static_assert(std::is_arithmetic<T>::value, 
+                      "T must be a numeric type");
+            hp.pop_back(value);
+        }
+
+        const std::vector<T>& get_heap() const { return hp; }
+        T get_value(const size_t& i)const{
+            if (i >= hp.size()) throw std::out_of_range("Index out of heap");
+            return hp[i];
+        } 
+    }
+
+    };
+}
 
 
 
