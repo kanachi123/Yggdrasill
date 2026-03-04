@@ -111,7 +111,7 @@ template<typename T>{
     class Node{
         T value;
         vector<Node*> forward;
-        MyClass* createInstance() {
+       Node* fixEmptyArgument() {
             T arg1;
     
             while (true) {
@@ -119,19 +119,48 @@ template<typename T>{
                     std::cout << "Please try again,as the constructor is empty: "<<std::endl>;
                     std::cin >> arg;
 
-                    return new MyClass(arg);
+                    return new Node(arg);
                 }
                 catch (const std::invalid_argument& e) {
-                    std::cout << "invalid argument: " << e.what() << "\ntry again.\n";
+                    std::cerr<<"error:"<<e.what()<<std::endl;//Nani?
                     std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 }
             }
         }
+        Node* fixType(){
+
+            T arg1;
+    
+            while (true) {
+                try {
+
+                    std::cin >> arg;
+
+                    return new Node(arg);
+                }
+                catch (const std::invalid_argument& e) {
+                    
+                    std::cerr<<"error:"<<e.what()<<std::endl;//Nani?
+                    std::cin.clear();
+                }
+            }
+            
+        }
         public:
             Node():{
+
                 throw std::invalid_argument("Warning:Constructor is empty");
-                create
+                createInstance();
+            } 
+            Node(const T& value)
+            {
+                if(!std::is_arithmetic<T>::value){
+                    throw std::invalid_argument("The type of the value is wrong");
+                    fixType();
+                }
+                else{
+                    this->value = value;
+                }
             } 
     
 
