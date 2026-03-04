@@ -96,6 +96,7 @@ namespace SL{//ты прям...slaaay Skip List field 💅
 
 #include <limits>//альтернатива сишному макросу INT_MAX,FLT_MAX которые возрващали для каждого типа свое максимальное значение почему над мы как бы ее используем как альтернативу знаку бесконечности ♾️(в данном контексте можно INT_MAX считать таким большим числом,что примерно эквиваленто к бесконечности)
 
+#include <iostream>
 
 std::random_device rd;
 std::mt19937 gen(rd());
@@ -108,8 +109,31 @@ std::bernulli_distribution u_ber(0.5);//🚕 uniform distribution
 template<typename T>{
     //я люблю вложеннные классы(car->engine),но на этот раз не будет так,потом разберем почему в паттернах проектирования
     class Node{
+        T value;
+        vector<Node*> forward;
+        public:
+            Node():{
+                throw std::invalid_argument("Warning:Constructor is empty");
+                create
+            } 
+    MyClass* createInstance() {
+        T arg1;
+    
+        while (true) {
+            try {
+                std::cout << "Please try again,as the constructor is empty: "<<std::endl>;
+                std::cin >> arg;
 
+                return new MyClass(arg);
+            }
+            catch (const std::invalid_argument& e) {
+                std::cout << "invalid argument: " << e.what() << "\ntry again.\n";
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+        }
     }
+
 
 
 };
