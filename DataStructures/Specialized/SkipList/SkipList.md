@@ -111,28 +111,29 @@ template<typename T>{
     class Node{
         T value;
         vector<Node*> forward;
+        MyClass* createInstance() {
+            T arg1;
+    
+            while (true) {
+                try {
+                    std::cout << "Please try again,as the constructor is empty: "<<std::endl>;
+                    std::cin >> arg;
+
+                    return new MyClass(arg);
+                }
+                catch (const std::invalid_argument& e) {
+                    std::cout << "invalid argument: " << e.what() << "\ntry again.\n";
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                }
+            }
+        }
         public:
             Node():{
                 throw std::invalid_argument("Warning:Constructor is empty");
                 create
             } 
-    MyClass* createInstance() {
-        T arg1;
     
-        while (true) {
-            try {
-                std::cout << "Please try again,as the constructor is empty: "<<std::endl>;
-                std::cin >> arg;
-
-                return new MyClass(arg);
-            }
-            catch (const std::invalid_argument& e) {
-                std::cout << "invalid argument: " << e.what() << "\ntry again.\n";
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            }
-        }
-    }
 
 
 
