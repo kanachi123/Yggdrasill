@@ -98,10 +98,7 @@ namespace SL{//ты прям...slaaay Skip List field 💅
 
 
 #include <iostream>
-
-std::random_device rd;
-std::mt19937 gen(rd());
-std::bernoulli_distribution u_ber(0.5);//🚕 distribution
+//🚕 distribution
 
 
 /* 
@@ -109,11 +106,44 @@ std::bernoulli_distribution u_ber(0.5);//🚕 distribution
 
 template<typename T>{
     //я люблю вложеннные классы(car->engine),но на этот раз не будет так,потом разберем почему в паттернах проектирования
-    class Node{
-        T value;
-        int count = 0;
-        vector<vector<Node*>> forward;
-       /*Node* fixEmptyArgument() {лишняя сущность остаток пустого конструктора можно не учитывать комментирую
+    class SkipList{
+        constexpr const int MAX_LEVEL = 16;
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::bernoulli_distribution u_ber(0.5);//🚕
+
+        class Node{
+            T value;
+            vector<Node*> forward;
+        public:
+            Node() = delete;//не должно быть пустого аргумента
+            Node(const T& value)
+            {
+                if(!std::is_arithmetic<T>::value){
+                    
+                    fixType();
+                    //throw std::invalid_argument("The type of the value is wrong");
+                }
+                else{
+                    this->value = value;нет
+                }
+            } 
+            
+            void insert(const T& _value) {
+                Node* current = this;
+            }
+            
+        };
+        
+        Node* root = nullptr;
+        public:
+            void insert(const T&);
+            Node* find(const T&)const;
+    };
+
+}
+
+/*Node* fixEmptyArgument() {лишняя сущность остаток пустого конструктора можно не учитывать комментирую
             T arg;
     
             while (true) {
@@ -128,77 +158,7 @@ template<typename T>{
                     std::cin.clear();
                 }
             }
-        }*/
-        Node* fixType(){
-
-            T arg;
-    
-            while (true) {
-                try {
-
-                    std::cin >> arg;
-
-                    return new Node(arg);
-                }
-                catch (const std::invalid_argument& e) {
-                    
-                    std::cerr<<"error:"<<e.what()<<std::endl;//Nani?
-                    std::cin.clear();
-                }
-            }
-            
-        }
-        public:
-            Node() = delete;//не должно быть пустого аргумента
-            Node(const T& value)
-            {
-                if(!std::is_arithmetic<T>::value){
-                    
-                    fixType();
-                    //throw std::invalid_argument("The type of the value is wrong");
-                }
-                else{
-                    this->value = value;нет
-                }
-            } 
-            void insert(const T&);
-            Node* find(const T&)const;
-
-
-
-};
-
-Node::insert(const T& _value){
-
-    check_arithmetic(_value);
-
-    bool i = 0;
-    //forward.resize(++count);
-    
-    for(int j =  ++count - 1 ;j > 0;j++){
-        
-        i = u_ber(gen);
-        if(i){
-            
-
-            for(){
-                //реализация места в уровне пока думаю
-            }
-
-            forward[j].push_back(&_value);//
-            forward[j]->value = _value;
-        }
-    }
-    forward[0].push_back(&_value);
-    forward[0]->value = _value;
-
-}
-
-
-
-}
-
-
+}*/
 
 
 
