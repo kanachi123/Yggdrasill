@@ -136,7 +136,7 @@ template<typename T>{
                 Node* current = this;
                      //    
     //  level 0  ^     //[root]->[node]->*forward[i]->...->[]->[]->[]->inf
-    //    .      |     //[root]->...[]->[node]->*forward[i+1]->...->inf
+    //    .      |     //[root]->...->[]->[node]->*forward[i+1]->...->inf
     //    .      |     //[root]->[node]->*forward[i+j]->...->[]->inf
     //  level 16 |     //[root]->inf
     //               //
@@ -153,6 +153,8 @@ template<typename T>{
             }
             
         };
+
+
         
         Node* root = nullptr;
         public:
@@ -163,6 +165,10 @@ template<typename T>{
     };
 
 }
+
+
+//короче мне лень,остальное сами напишите чет стало неинтересно,
+//назовем задачкой для изучающего,будто я оставил намеренно неполным
 
 /*Node* fixEmptyArgument() {лишняя сущность остаток пустого конструктора можно не учитывать комментирую
             T arg;
