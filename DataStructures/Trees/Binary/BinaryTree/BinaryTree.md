@@ -221,6 +221,11 @@ void BinaryTree<T>::removeHelper(std::unique_ptr<Node>& node, const T& value){
         if (!node->left && !node->right)//если нет указателя вообще просто сброс ноды
         {
             node.reset();
+            /* 
+            эквивалентно{
+                            delete node.get();node = nullptr;RAII короче
+                        }
+             */
         }
         else if (!node->left)//если нет указателя на левую ноду правую ноду переносим на главную(переносим целую ветку из нод под нее)
         {
