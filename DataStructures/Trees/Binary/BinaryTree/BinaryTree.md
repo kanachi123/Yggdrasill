@@ -127,7 +127,7 @@ class BinaryTree{
         std::unique_ptr<Node> right;
         Node(T val) : value(val), left(nullptr), right(nullptr) {}
     };
-    unique_ptr<Node>root;
+    std::unique_ptr<Node>root;
     public:
         BinaryTree() : root(nullptr) {}
         BinaryTree(T val) : root(std::make_unique<Node>(val)) {}
