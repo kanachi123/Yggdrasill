@@ -154,7 +154,48 @@ class BinaryTree{
         void remove(const T& value);
 
 };
+void BinaryTree::insertHelper(std::unique_ptr<Node>& node, const T& value)
+{
+    if (!node)
+    {
+        node = std::make_unique<Node>(value);
+        return;
+    }
 
+    if (value < node->value)
+        insertHelper(node->left, value);
+    else
+        insertHelper(node->right, value);
+}
+void BinaryTree::insert(const T& value){
+    insertHelper(root,value);
+}
+Node* BinaryTree::search(const T& value)const{
+    return  searchHelper(root.get(),value);
+}
+
+Node* BinaryTree::searchHelper(Node* node,const T& value)const{
+    if(!node)//если рут пустой нечего не делаем
+        return nullptr;
+    else if(value == node->value) //сравниваем ноду с значением если есть совпадение даем указатель на ноду
+        return node;
+    else if(value < node->value>)
+        return searchHelper(node->left.get(),value);//левый потомок меньше по значениею родителя
+    else{
+        return searchHelper(node->right.get(),value);
+    }
+}
+void BinaryTree::inorderHelper()const{
+    if(!node)
+        return;
+    inorderHelper(node->left.get());
+    inorderHelper(node->right.get());
+}
+
+void BinaryTree::inorder()const{
+    
+    inorderHelper(root.get());
+}
 }
 
 
