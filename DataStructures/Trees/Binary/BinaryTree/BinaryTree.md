@@ -145,6 +145,7 @@ class BinaryTree{
         }
         Node* getRoot() const { return root.get(); }
         void inorder() const;
+        void inorder(Node* node) const;
         bool empty() const {
             return root == nullptr;
         }
