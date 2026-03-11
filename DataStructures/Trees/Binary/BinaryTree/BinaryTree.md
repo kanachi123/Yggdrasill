@@ -144,7 +144,6 @@ class BinaryTree{
             root->right = std::make_unique<Node>(rightVal);
         }
         Node* getRoot() const { return root.get(); }
-        void inorder(Node* node) const;
         void inorder() const;
         bool empty() const {
             return root == nullptr;
