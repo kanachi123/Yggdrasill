@@ -117,32 +117,31 @@ Until Dawn
 ```cpp
 
 namespace bTree{
-    
-template<typname T>
+
+template<typename T>
 class BinaryTree{
-    unique_ptr<Node>root;
-    
-    template<typname T>
     class Node{
         T value;
-        std::unique_ptr<Node> left;
+        public:
+        std::unique_ptr<Node> left;//RAII
         std::unique_ptr<Node> right;
-
         Node(T val) : value(val), left(nullptr), right(nullptr) {}
     };
+    unique_ptr<Node>root;
     public:
-        BinaryTree() = delete;
-        BinaryTree(Node& _root):root(_root){}
-        BinaryTree(Node& left):BinaryTree(Node& _root)
-        {
-            
-        }
-        BinaryTree(Node& left,Node& right):BinaryTree(Node& _root)
-        {
+        BinaryTree() : root(nullptr) {}
+        BinaryTree(T val) : root(std::make_unique<Node>(val)) {}
 
+        BinaryTree(T rootVal, T leftVal): BinaryTree(rootVal)
+        {
+            root->left = std::make_unique<Node>(leftVal);
         }
-
-}
+        BinaryTree(T rootVal, T leftVal, T rightVal) : BinaryTree(rootVal, leftVal)
+        {
+            root->right = std::make_unique<Node>(rightVal);
+        }
+        Node* getRoot() const { return root.get(); }
+};
 
 }
 
