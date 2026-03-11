@@ -154,7 +154,8 @@ class BinaryTree{
         void remove(const T& value);
 
 };
-void BinaryTree::insertHelper(std::unique_ptr<Node>& node, const T& value)
+template<typename T>
+void BinaryTree<T>::insertHelper(std::unique_ptr<Node>& node, const T& value)
 {
     if (!node)
     {
@@ -167,14 +168,16 @@ void BinaryTree::insertHelper(std::unique_ptr<Node>& node, const T& value)
     else
         insertHelper(node->right, value);
 }
-void BinaryTree::insert(const T& value){
+template<typename T>
+void BinaryTree<T>::insert(const T& value){
     insertHelper(root,value);
 }
-Node* BinaryTree::search(const T& value)const{
+template<typename T>
+Node* BinaryTree<T>::search(const T& value)const{
     return  searchHelper(root.get(),value);
 }
-
-Node* BinaryTree::searchHelper(Node* node,const T& value)const{
+template<typename T>
+Node* BinaryTree<T>::searchHelper(Node* node,const T& value)const{
     if(!node)//если рут пустой нечего не делаем
         return nullptr;
     else if(value == node->value) //сравниваем ноду с значением если есть совпадение даем указатель на ноду
@@ -185,16 +188,67 @@ Node* BinaryTree::searchHelper(Node* node,const T& value)const{
         return searchHelper(node->right.get(),value);
     }
 }
-void BinaryTree::inorderHelper()const{
+
+template<typename T>
+void BinaryTree<T>::inorderHelper()const{
     if(!node)
         return;
     inorderHelper(node->left.get());
     inorderHelper(node->right.get());
 }
 
-void BinaryTree::inorder()const{
+template<typename T>
+void BinaryTree<T>::inorder()const{
     
     inorderHelper(root.get());
+}
+
+template<typename T>
+void BinaryTree<T>::removeHelper(std::unique_ptr<Node>& node, const T& value){
+    if (!node)
+        return;
+
+    if (value < node->value)
+    {
+        removeHelper(node->left, value);
+    }
+    else if (value > node->value)
+    {
+        removeHelper(node->right, value);
+    }
+    else
+    {
+        if (!node->left && !node->right)//если нет указателя вообще просто сброс ноды
+        {
+            node.reset();
+        }
+        else if (!node->left)//если нет указателя на левую ноду правую ноду переносим на главную(переносим целую ветку из нод под нее)
+        {
+            node = std::move(node->right);
+        }
+        else if (!node->right)
+        {
+            node = std::move(node->left);//переносим значение,мув семантика
+        }
+        else
+        {
+            Node* min = node->right.get();
+
+            while (min->left)
+                min = min->left.get();
+
+            node->value = min->value;
+
+            removeHelper(node->right, min->value);
+        }
+
+    }
+}
+
+template<typename T>
+void BinaryTree<T>::remove(const T& value){
+    
+    inorderHelper(root,value);
 }
 }
 
