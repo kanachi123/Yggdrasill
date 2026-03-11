@@ -125,18 +125,18 @@ class BinaryTree{
         public:
         std::unique_ptr<Node> left;//RAII
         std::unique_ptr<Node> right;
-        Node(T val) : value(val), left(nullptr), right(nullptr) {}
+        Node(const T& val) : value(val), left(nullptr), right(nullptr) {}
     };
     std::unique_ptr<Node>root;
     public:
-        BinaryTree() : root(nullptr) {}
-        BinaryTree(T val) : root(std::make_unique<Node>(val)) {}
+        BinaryTree() : root(nullptr) {}//можно и constructor() = delete;
+        BinaryTree(const T& val) : root(std::make_unique<Node>(val)) {}
 
-        BinaryTree(T rootVal, T leftVal): BinaryTree(rootVal)
+        BinaryTree(const T& rootVal,const T& leftVal): BinaryTree(rootVal)
         {
             root->left = std::make_unique<Node>(leftVal);
         }
-        BinaryTree(T rootVal, T leftVal, T rightVal) : BinaryTree(rootVal, leftVal)
+        BinaryTree(const T& rootVal,const T& leftVal,const T& rightVal) : BinaryTree(rootVal, leftVal)
         {
             root->right = std::make_unique<Node>(rightVal);
         }
