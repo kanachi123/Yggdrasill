@@ -131,6 +131,7 @@ class BinaryTree{
     void insertHelper(std::unique_ptr<Node>& node, const T& value);
     Node* searchHelper(Node* node, const T& value) const;
     void removeHelper(std::unique_ptr<Node>& node, const T& value);
+    void BinaryTree<T>::inorderHelper() const;
     public:
         BinaryTree() : root(nullptr) {}//можно и constructor() = delete;
         BinaryTree(const T& val) : root(std::make_unique<Node>(val)) {}
@@ -253,7 +254,7 @@ void BinaryTree<T>::removeHelper(std::unique_ptr<Node>& node, const T& value){
 template<typename T>
 void BinaryTree<T>::remove(const T& value){
     
-    inorderHelper(root,value);
+    removeHelper(root,value);
 }
 }
 
