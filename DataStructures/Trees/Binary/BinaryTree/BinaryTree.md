@@ -105,11 +105,48 @@ Until Dawn
 2. у каждой вершины не более одного родителя
     $\forall v \in V \ {r} \exists! u \in V : (u,v) \in E$
     #### **для любой вершины кроме рута принадлежащей к множеству всех вершин данного дерева существует одна единственная вершина принадлежащая множеству всех вершин данного множества такая что пара этих вершин принадлежит множеству оринтерованных ребер данного множества ребер** *это если читать буквально по кванторам*
-3. у любого из верщин не может быть больше двух потомков(по языку теории множеств,мощность любого выборочного подмножества,не больше двух)
+3. у любого из вершин не может быть больше двух потомков(по языку теории множеств,мощность любого выборочного подмножества,не больше двух)
     $|{u \in V | (v,u) \in E}| \leq 2$    
 
 впринце я могу писать более академично,педантно,так еще и граматически правильно с пунктуацией и без мата,чтобы не думали что за сапожник,но я дедпул:  
 ![նստել եմ ծառի տակ,նկարում եմ նապաստակ](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnE2c2E1MzFybGh1Mmp0d2V3emhocWpsbDZ0ZG1hdmxjd2k3Yml0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SmgdGLAzMPOUw/giphy.gif)  
 ##### *նստել եմ binary ծառի տակ,նկարում եմ նապաստակ*
+
+## ***Имплементация***
+
+```cpp
+
+namespace bTree{
+    
+template<typname T>
+class BinaryTree{
+    unique_ptr<Node>root;
+    
+    template<typname T>
+    class Node{
+        T value;
+        std::unique_ptr<Node> left;
+        std::unique_ptr<Node> right;
+
+        Node(T val) : value(val), left(nullptr), right(nullptr) {}
+    };
+    public:
+        BinaryTree() = delete;
+        BinaryTree(Node& _root):root(_root){}
+        BinaryTree(Node& left):BinaryTree(Node& _root)
+        {
+            
+        }
+        BinaryTree(Node& left,Node& right):BinaryTree(Node& _root)
+        {
+
+        }
+
+}
+
+}
+
+
+```
 
 
