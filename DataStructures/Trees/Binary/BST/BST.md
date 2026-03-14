@@ -56,9 +56,9 @@ protected:
 
 public:
 
-    virtual Node* find(int key) = 0;
-    virtual void insert(int key) = 0;
-    virtual void remove(int key) = 0;
+    virtual Node* find(const T& key) = 0;
+    virtual void insert(const T& key) = 0;
+    virtual void remove(const T& key) = 0;
     void inorder(Node* node);
     void preorder(Node* node);
     void postorder(Node* node);
