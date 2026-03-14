@@ -274,10 +274,10 @@ void BinaryTree<T>::printTree(Node* node, int depth = 0) const {
     if (node->left)
         printTree(node->left.get(), prefix + (isLeft ? "\t" : "│\t"), true);
     /*
-        │       ┌── 20
-        │   ┌── 15
-        └── 10
-            └── 5 
+        │       ┌── 5 
+        │   ┌── 10
+        └── 20
+            └── 15
     */
 }
 
