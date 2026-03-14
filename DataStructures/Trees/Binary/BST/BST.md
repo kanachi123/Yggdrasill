@@ -39,3 +39,40 @@
 
 #### *P.S:*
 ##### *реализацию не буду писать,потому что можно просто наследовать от AbstractBinaryTree и переопределять методы(полиморфизм)*
+
+```cpp
+
+class AbstractBinaryTree
+{
+protected:
+    struct Node
+    {
+        int key;
+        Node* left;
+        Node* right;
+    };
+
+    Node* root;
+
+public:
+
+    virtual Node* find(int key) = 0;
+    virtual void insert(int key) = 0;
+    virtual void remove(int key) = 0;
+
+};
+
+class BinarySearchTree : public AbstractBinaryTree
+{
+public:
+
+    Node* find(int key) override;
+    void insert(int key) override;
+    void remove(int key) override;
+
+};
+
+...
+
+
+```
