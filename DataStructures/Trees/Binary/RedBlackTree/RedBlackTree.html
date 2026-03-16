@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Красно-черное дерево с линиями</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #222; /* для контраста */
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  .tree {
+    position: relative;
+    text-align: center;
+    width: 400px;
+    height: 300px; /* важно! контейнер занимает место */
+    margin-bottom: 20px; /* пространство для текста под деревом */
+  }
+  .node {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+  }
+  .red { background-color: red; }
+  .black { background-color: black; }
+  svg { position: absolute; top: 0; left: 0; }
+</style>
+</head>
+<body>
+
+<div class="tree" id="tree">
+
+  <!-- Линии через SVG -->
+  <svg width="400" height="300">
+    <line x1="170" y1="20" x2="70" y2="120" stroke="white" stroke-width="2"/>
+    <line x1="170" y1="20" x2="270" y2="120" stroke="white" stroke-width="2"/>
+    <line x1="70" y1="120" x2="30" y2="220" stroke="white" stroke-width="2"/>
+    <line x1="70" y1="120" x2="110" y2="220" stroke="white" stroke-width="2"/>
+    <line x1="270" y1="120" x2="310" y2="220" stroke="white" stroke-width="2"/>
+  </svg>
+
+  <!-- Узлы -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Красно-черное дерево с линиями</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #222; /* для контраста */
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  .tree {
+    position: relative;
+    text-align: center;
+    width: 400px;
+    height: 300px; /* важно! контейнер занимает место */
+    margin-bottom: 20px; /* пространство для текста под деревом */
+  }
+  .node {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+  }
+  .red { background-color: red; }
+  .black { background-color: black; }
+  svg { position: absolute; top: 0; left: 0; }
+</style>
+</head>
+<body>
+
+<div class="tree" id="tree">
+
+  <!-- Линии через SVG -->
+  <svg width="400" height="300">
+    <line x1="170" y1="20" x2="70" y2="120" stroke="white" stroke-width="2"/>
+    <line x1="170" y1="20" x2="270" y2="120" stroke="white" stroke-width="2"/>
+    <line x1="70" y1="120" x2="30" y2="220" stroke="white" stroke-width="2"/>
+    <line x1="70" y1="120" x2="110" y2="220" stroke="white" stroke-width="2"/>
+    <line x1="270" y1="120" x2="310" y2="220" stroke="white" stroke-width="2"/>
+  </svg>
+
+  <!-- Узлы -->
+  <div class="node black" id="n10" style="top:0px; left:150px;">10</div>
+  <div class="node red" id="n5" style="top:100px; left:50px;">5</div>
+  <div class="node black" id="n20" style="top:100px; left:250px;">20</div>
+  <div class="node black" id="n3" style="top:200px; left:10px;">3</div>
+  <div class="node black" id="n7" style="top:200px; left:90px;">7</div>
+  <div class="node red" id="n30" style="top:200px; left:290px;">30</div>
+</div>
+
+</body>
+</html>
+
+  <div class="node black" id="n10" style="top:0px; left:150px;">10</div>
+  <div class="node red" id="n5" style="top:100px; left:50px;">5</div>
+  <div class="node black" id="n20" style="top:100px; left:250px;">20</div>
+  <div class="node black" id="n3" style="top:200px; left:10px;">3</div>
+  <div class="node black" id="n7" style="top:200px; left:90px;">7</div>
+  <div class="node red" id="n30" style="top:200px; left:290px;">30</div>
+</div>
+
+</body>
+</html>
