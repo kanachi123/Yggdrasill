@@ -44,4 +44,4 @@
 ***красный узел*** про то что нужно балансировать дерево так,чтобы стало черным
 как прыщ который нужно выдавить,если нет прыща дерево полностью черное,а когда есть короче(хотя не лучшая аналогия это как шахматная плитка которая не в своем месте или кубик рубика нужно мешать грани так чтобы встали на свои места)
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/960px-Red-black_tree_example.svg.png)
+[[wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/960px-Red-black_tree_example.svg.png)](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red-black_tree_example.svg/960px-Red-black_tree_example.svg.png)
