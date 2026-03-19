@@ -43,3 +43,55 @@
 ***Легче***  
 ***красный узел*** про то что нужно балансировать дерево так,чтобы стало черным
 как прыщ который нужно выдавить,если нет прыща дерево полностью черное,а когда есть короче(хотя не лучшая аналогия это как шахматная плитка которая не в своем месте или кубик рубика нужно мешать грани так чтобы встали на свои места)
+
+*можно подчеркнуть как пример использования RBT в std::map*
+
+```cpp
+
+template <typename T>
+class BinaryTree {
+public:
+    virtual void insert(T key) = 0;
+    virtual void remove(T key) = 0;
+    virtual Node<T>* find(T key);
+    void inorder(Node<T>* root);
+};
+
+
+namespace RBT{
+    enum Color{Black,Red};
+
+    template<typename T>
+    class RedBlackTree : public AbstractBinaryTree<T>{
+
+        protected:
+        struct Node
+        {
+            T key;
+            Color color;
+            Node* left;
+            Node* right;
+            Node* parent;
+            Node(const T& _key) : key(_key),color(Red),right(nullptr),left(nullptr),parent(nullptr){}
+        };
+        void insert(const T& key) override {
+        
+        }
+        
+        void remove(const T& key) override {
+        
+        }
+        void fixInsert(Node* node);
+        void fixRemove(Node* node);
+        Node* rotateLeft(Node* x);
+        Node* rotateRight(Node* y);
+
+    }
+
+
+
+
+}
+
+
+```
