@@ -59,7 +59,7 @@ public:
 
 
 namespace RBT{
-    enum Color{Black,Red};
+    enum Color{BLACK,RED};
 
     template<typename T>
     class RedBlackTree : public AbstractBinaryTree<T>{
@@ -72,7 +72,7 @@ namespace RBT{
                 Color color;
                 std::unique_ptr<Node> left;
                 std::unique_ptr<Node> right;
-                std::unique_ptr<Node> parent;
+                Node* parent;
                 Node(const T& _key) : key(_key),color(Red),right(nullptr),left(nullptr),parent(nullptr){}
             };
         std::unique_ptr<Node> root;
@@ -85,7 +85,7 @@ namespace RBT{
         public:
             RedBlackTree() : root(nullptr) {}
             void insert(const T& key) override {
-                
+
             
             }
             void remove(const T& key) override {
