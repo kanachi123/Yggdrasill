@@ -65,26 +65,33 @@ namespace RBT{
     class RedBlackTree : public AbstractBinaryTree<T>{
 
         protected:
-        struct Node
-        {
-            T key;
-            Color color;
-            Node* left;
-            Node* right;
-            Node* parent;
-            Node(const T& _key) : key(_key),color(Red),right(nullptr),left(nullptr),parent(nullptr){}
-        };
-        void insert(const T& key) override {
+            class Node
+            {
+                public:
+                T key;
+                Color color;
+                std::unique_ptr<Node> left;
+                std::unique_ptr<Node> right;
+                std::unique_ptr<Node> parent;
+                Node(const T& _key) : key(_key),color(Red),right(nullptr),left(nullptr),parent(nullptr){}
+            };
+        std::unique_ptr<Node> root;
         
-        }
-        
-        void remove(const T& key) override {
-        
-        }
         void fixInsert(Node* node);
         void fixRemove(Node* node);
         Node* rotateLeft(Node* x);
         Node* rotateRight(Node* y);
+
+        public:
+            RedBlackTree() : root(nullptr) {}
+            void insert(const T& key) override {
+                
+            
+            }
+            void remove(const T& key) override {
+            
+            }
+            std::unique_ptr<Node> search(const T& value) const;
 
     }
 
