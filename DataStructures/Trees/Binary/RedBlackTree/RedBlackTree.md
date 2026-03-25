@@ -51,7 +51,7 @@
 template <typename T>
 class BinaryTree {
 public:
-    virtual void insert(T key) = 0;
+    virtual void insert(T key) = 0;//как пример там в BinaryTree есть лучше
     virtual void remove(T key) = 0;
     virtual Node<T>* find(T key);
     void inorder(Node<T>* root);
@@ -59,10 +59,12 @@ public:
 
 
 namespace RBT{
+
     enum Color{BLACK,RED};
 
     template<typename T>
-    class RedBlackTree : public AbstractBinaryTree<T>{
+    class RedBlackTree : public AbstractBinaryTree<T>
+    {
 
         protected:
             class Node
@@ -85,20 +87,15 @@ namespace RBT{
         public:
             RedBlackTree() : root(nullptr) {}
             void insert(const T& key) override {
-
-            
+                        
             }
             void remove(const T& key) override {
             
             }
-            std::unique_ptr<Node> search(const T& value) const;
+            Node* search(const T& value) const;
 
     }
-
-
-
-
 }
 
-
 ```
+

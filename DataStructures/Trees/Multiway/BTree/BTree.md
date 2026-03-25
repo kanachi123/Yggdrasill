@@ -1,0 +1,133 @@
+# ***B-Tree***
+
+## **Предисловие:** 
+В обычном бинарном дереве каждый узел имеет не более двух детей: левый и правый
+
+#### *В многоходовом дереве узел может иметь любое количество детей — не ограничено двумя*
+
+
+```
+        A
+      / | \
+     B  C  D
+    / \      \
+   E   F      G
+```
+
+*такие деревья используются для иерархического хранения данных*
+
+1. Файловые системы - тот же tree /f /a в винде или linux(systemd итд)
+
+```bash
+
+std::cout << system("tree /f /a | clip");
+
+OUT:
+C:.
++---Associative
+|   +---CollisionResolution
+|   \---HashTable
++---Linear
+|   +---Array
+|   +---LinkedList
+|   +---Queue
+|   \---Stack
++---Non-linear
+|   +---AdjacencyList
+|   \---AdjacencyMatrix
++---Specialized
+|   +---BloomFilter
+|   +---DisjointSet
+|   +---Heap
+|   \---SkipList
+\---Trees
+    +---Binary
+    |   +---AVL
+    |   +---BinaryTree
+    |   +---BST
+    |   \---RedBlackTree
+    +---Multiway
+    |   +---BTree
+    |   \---TernaryTree
+    +---RangeStructures
+    |   +---FenwickTree
+    |   \---SegmentTree
+    +---SpatialTrees
+    |   +---KDTree
+    |   +---OctTree
+    |   \---QuadTree
+    \---StringTrees
+        +---SuffixTree
+        +---TernarySearchTree
+        \---Trie
+```
+
+```bash
+/
+├─ bin
+├─ etc
+│  ├─ systemd
+│  │  ├─ system
+│  │  └─ user
+│  └─ network
+├─ home
+│  ├─ alice
+│  │  ├─ Documents
+│  │  └─ Pictures
+│  └─ bob
+└─ var
+    ├─ log
+    └─ tmp
+```
+
+2. Базы данных(эффективный поиск)
+```SQL
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    ManagerID INT NULL,
+    FOREIGN KEY (ManagerID) REFERENCES Employees(EmployeeID)
+);
+
+Alice (1)
+├─ Bob (2)
+│  ├─ Diana (4)
+│  └─ Eva (5)
+└─ Charlie (3)
+
+| EmployeeID | Name    | ManagerID |
+| ---------- | ------- | --------- |
+| 1          | Alice   | NULL      |
+| 2          | Bob     | 1         |
+| 3          | Charlie | 1         |
+| 4          | Diana   | 2         |
+| 5          | Eva     | 2         |
+
+```
+3. XML/JSON - внутри поддеревья то есть данные хранятся как дерево
+
+```JSON
+    {
+    "user": {
+        "name": "user",
+        "contacts": ["contact1", "contact2"]
+    }
+    }
+```
+
+## **теперь сам B-tree**
+
+это подвид multyway tree,который хранит отсортированные ключи,имеет CRUD(create,read,update,delete) структуру,оно позволяет
+эффективно выполнять эти операции
+
+*свойства:* 
+1. Каждая нода имеет несколько ключей(в имплементации например std::vector<node*> итп)
+2. каждая нода имеет несколько потомков(в отличие от бинаного может быть больше 2)
+3. у такого дерева все листья находятся на одном уровне,т.е. дерево сбалансировано
+4. порядок дерева определяет минимальное и максимальное количество потомков и ключей(min(t-1),max(2t-1,child_key_count = key_count + 1))
+
+## **например k == 4**
+![b-tree](https://kroki.io/mermaid/svg/eNpLL0osyFAIceFSAIKg_PySaKVoUwOFGgVLg1ilWLAomPAxBEoYgiSMQIQxiDCBK_EFyZqBxMxBhAVcIgiiDSRoCNZtCNZuCNZvCDEAbrWCrq4d0CJUvi8aP8gQAELgJ80=)
+
+В этом случае имеет минимум 3,максимум 7 ключей
+
