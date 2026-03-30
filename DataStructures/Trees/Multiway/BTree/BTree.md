@@ -20,7 +20,7 @@
 
 ```bash
 
-std::cout << system("tree /f /a | clip");
+# std::cout << system("tree /f /a");
 
 OUT:
 C:.
