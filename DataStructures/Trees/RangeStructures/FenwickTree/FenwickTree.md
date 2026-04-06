@@ -165,6 +165,7 @@ class FenwickTree
     public:
     FenwickTree()=delete;
     void update(std::vector<T>& a, size_t i, T delta) {
+        ++i;
         while (i < a.size()) {
             a[i] += delta;  
             i += (i & (~i+1)); 
