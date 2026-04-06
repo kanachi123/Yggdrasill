@@ -154,12 +154,13 @@ j = $2_{0} + ... 2_{j}$
 namespace fen{ 
 #pragma once
 #include <vector>
+#include <type_traits>
 
 template<typename T>
 requires std::is_arithmetic_v<T> //C++20
 struct FenwickTree
 {
-    std::vector<T>;
+    std::vector<T> tree;
     void update(size_t& i,const T& delta);
     T query(size_t& i)const;
     T range_query(size_t& left,size_t right)const;
