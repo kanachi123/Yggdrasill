@@ -164,7 +164,12 @@ class FenwickTree
     std::vector<T> tree;
     public:
     FenwickTree()=delete;
-    void update(size_t i,const T& delta);
+    void update(const std::vector<T>& a, size_t i, T delta) {
+        while (i < a.size()) {
+            a[i] += delta;  
+            i += (i & -i); 
+        }
+    };
     T query(size_t i)const;
     T range_query(size_t left,size_t right)const;
 
