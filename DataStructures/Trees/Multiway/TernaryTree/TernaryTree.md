@@ -111,9 +111,12 @@ class Program
 
 ```
 
-![-есть два стула -возьму пики отрублю ложную дихотомию](https://zonait.ro/wp-content/uploads/2019/08/ERICA-REVIEW-5.gif)
+
+![а ты проходил капчу?](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG42cmE2MHNocW0zOWU1YWZoNHNzNHY2dXZ0bjh0Y3B6bmM0NnhsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/thXlw8rgsRdTM94IzW/giphy.gif)
+
+
 
 и когда ты такой хранишь все возможные выборы в 
 тернарном дереве(хотя не всегда 3 выбора иногда намного больше)
 
-![а ты проходил капчу?](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG42cmE2MHNocW0zOWU1YWZoNHNzNHY2dXZ0bjh0Y3B6bmM0NnhsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/thXlw8rgsRdTM94IzW/giphy.gif)
+![-есть два стула -возьму пики отрублю ложную дихотомию](https://zonait.ro/wp-content/uploads/2019/08/ERICA-REVIEW-5.gif)
