@@ -151,10 +151,11 @@ j = $2_{0} + ... 2_{j}$
 //общий случай фенвика по шаблону
 
 
-namespace fen{ 
 #pragma once
 #include <vector>
 #include <type_traits>
+
+namespace fen{ 
 
 template<typename T>
 requires std::is_arithmetic_v<T> //C++20
