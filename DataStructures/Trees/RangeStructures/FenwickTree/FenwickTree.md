@@ -1,7 +1,7 @@
 # FenwickTree
 
 Дерево Фенвика (двоичное индексированное дерево, англ. Fenwick tree, binary indexed tree, BIT) — структура данных, позволяющая быстро изменять значения в массиве и находить некоторые функции от элементов массива. Впервые описано Рябко Б.Я. в 1989 году(вкпедия 
-(https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%A4%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0))  
+https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%A4%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0)  
 
 1. Fenwick Tree (Binary Indexed Tree)
 Это структура данных, реализованная через массив.
