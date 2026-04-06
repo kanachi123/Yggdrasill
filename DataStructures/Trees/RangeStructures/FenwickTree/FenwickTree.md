@@ -159,9 +159,11 @@ namespace fen{
 
 template<typename T>
 requires std::is_arithmetic_v<T> //C++20
-struct FenwickTree
+class FenwickTree
 {
     std::vector<T> tree;
+    public:
+    FenwickTree()=delete;
     void update(size_t& i,const T& delta);
     T query(size_t& i)const;
     T range_query(size_t& left,size_t right)const;
