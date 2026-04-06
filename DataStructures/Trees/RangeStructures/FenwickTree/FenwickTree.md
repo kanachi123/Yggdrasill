@@ -178,7 +178,6 @@ class FenwickTree
 
 }
 
-
-
-
 ```
+
+![если знаешь где доркать,тогда моя мусорка сокровищница](https://img.apmcdn.org/fa0791c2044216a0cc948524a5b67b544dd52e38/uncropped/396dcd-20190307-rethinking-garbage-01.gif)
