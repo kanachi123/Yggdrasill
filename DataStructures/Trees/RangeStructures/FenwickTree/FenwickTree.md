@@ -139,7 +139,7 @@ i & -i = 0b1100 & 0b0100 = 0b0100 = 4
 i-(i & -i) = 12 - 4 = 8
 => tree[12].range->(8,12] => return sum[9,12]
 
-4%2==0,по этому и выбрали $2^i$ младгая степень дает нижний предел разложить по стпепням двойки удобно
+4%2==0,по этому и выбрали $2^i$ младшая степень дает нижний предел разложить по степеням двойки удобно
 
 j = $2_{0} + ... 2_{j}$
 [j+1,i] -> [9,12]{1+2+...+8}
@@ -150,18 +150,21 @@ j = $2_{0} + ... 2_{j}$
 
 //общий случай фенвика по шаблону
 
-namespace fen{ 
 
-template<typname T>
+namespace fen{ 
+#pragma once
+#include <vector>
+
+template<typename T>
 requires std::is_arithmetic_v<T> //C++20
 struct FenwickTree
 {
-    FenwickTree();
+    std::vector<T>;
+    void update(size_t& i,const T& delta);
+    T query(size_t& i)const;
+    T range_query(size_t& left,size_t right)const;
 
-
-
-
-}
+};
 
 }
 
