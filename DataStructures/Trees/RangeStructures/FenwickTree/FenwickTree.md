@@ -154,10 +154,9 @@ namespace fen{
 
 template<typname T>
 requires std::is_arithmetic_v<T> //C++20
-class FenwickTree
+struct FenwickTree
 {
-    public:
-        FenwickTree();
+    FenwickTree();
 
 
 
