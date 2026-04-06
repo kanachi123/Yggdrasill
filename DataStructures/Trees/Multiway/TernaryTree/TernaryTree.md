@@ -36,7 +36,7 @@ ${(q^{n+1}-1)}/{q-1}$ можем посчитать сумму $({3^{h+1} - 1})/
 причина в том что в iой глубине появляется i вершин с 3 выборами получается $3^i$
 то есть i родителей,но каждый по 3 ребенка максимум получается $3^i$
 
-можно доказать через индукцию,но мне ближе дедукция...
+можно доказать через индукцию,но мне ближе дедукция...  
 ![SLock🔒](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHloYTU2ZXkzdzN6MDN2dnl5ZmY3YTN4cTNoMG5keWJ4ZW45azFtdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlErdfKzQyupvd6/giphy.gif)
 
 
@@ -109,14 +109,14 @@ class Program
     }
 }
 
-```
+```  
 
 
-![а ты проходил капчу?](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG42cmE2MHNocW0zOWU1YWZoNHNzNHY2dXZ0bjh0Y3B6bmM0NnhsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/thXlw8rgsRdTM94IzW/giphy.gif)
+![а ты проходил капчу?](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG42cmE2MHNocW0zOWU1YWZoNHNzNHY2dXZ0bjh0Y3B6bmM0NnhsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/thXlw8rgsRdTM94IzW/giphy.gif)  
 
 
 ```
 и когда ты такой хранишь все возможные выборы в 
-тернарном дереве(хотя не всегда 3 выбора иногда намного больше)
-```
+тернарном дереве(хотя не всегда 3 выбора иногда намного больше)  
+```  
 ![-есть два стула -возьму пики отрублю ложную дихотомию](https://i.imgur.com/q11b5QA.gif)
