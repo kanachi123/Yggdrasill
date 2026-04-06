@@ -38,3 +38,7 @@ ${(q^{n+1}-1)}/{q-1}$ можем посчитать сумму $({3^{h+1} - 1})/
 
 можно доказать через индукцию,но мне ближе дедукция...
 ![SLock🔒](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHloYTU2ZXkzdzN6MDN2dnl5ZmY3YTN4cTNoMG5keWJ4ZW45azFtdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlErdfKzQyupvd6/giphy.gif)
+
+
+например треугольник паскаля сделать тетраедром получится тетраедр паскаля
+![pascals teth...](https://dalyfpascalstriangle.weebly.com/uploads/4/3/9/4/43944925/5690779_orig.gif)
