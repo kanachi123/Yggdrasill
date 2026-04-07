@@ -171,8 +171,20 @@ class FenwickTree
             i += (i & (~i+1)); 
         }
     };
-    T query(size_t i)const;
-    T range_query(size_t left,size_t right)const;
+    T query(size_t i)const{
+        T result = 0;
+        ++i;//учитываем случай in i = 0,а когда i = 1 тогда для i = 0 цикл будет выполнятся
+        while(i > 0){
+            result += tree[i];
+            i -= (i & (~i + 1));
+            /*то же самое как в прошлом методе получаем младший бит потом плюс один и так до границы новой нижней границы пока не дойдем до начала дерева*/
+        }
+        return result;//в итоге получим сумму от sum([0,i]);
+    };
+    T range_query(size_t left,size_t right)const{
+        if(left > right) std::swap(left, right);
+            return query(right) - (left == 0 ? 0 : query(left - 1));
+    };
 
 };
 
