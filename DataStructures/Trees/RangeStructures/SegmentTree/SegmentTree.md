@@ -145,6 +145,31 @@ void build(int v, int L, int R)
     }
 }
 
+void update(int i, int newValue)//снова перегрузка по дефолту 
+{
+    update(1, 0, (1 << h) - 1, i, newValue);//взято из википедии все равно нужно просто понять логику мне лень
+    
+    //мы изменили a[i],и нужно поменять сумму всего промежутка тогда то же самое просто с методом update
+}
+
+void update(int v, int L, int R, int i, int newValue)
+{
+    if (L == R){
+        b[v] = newValue; //дерево отрезков
+        a[i] = newValue;//изночальный массив обновляем
+    }
+    else {
+        int C = (L + R) / 2;
+        if (i <= C){//если индекс ниже границы по левомупотомку обновляем
+            update(v * 2, L, C, i, newValue);
+        }
+        else {
+            update(v * 2 + 1, C + 1, R, i, newValue);//по правому потомку
+        }
+        b[v] = b[v * 2] + b[v * 2 + 1];//сумируем снова
+    }
+}
+
 
 ```
 
