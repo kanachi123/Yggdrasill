@@ -196,4 +196,6 @@ segment tree строится по времени, а не по значению
 
 ```
 
-чаще всего он нужен там где есть  массив,много запросов на отрезке,изменения в массиве(отчислить всех студентов в промежутке [25,75] по среднему баллу метод kick_ass(seg_tree))
+чаще всего он нужен там где есть  массив,много запросов на отрезке,изменения в массиве(отчислить всех студентов в промежутке [25,75] по среднему баллу метод kick_ass(avg_remover((seg_tree)))
+
+![нет бумажки,нет забот](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG5lODBtZjIyM2loZGlzNTM2ZTVvZGlwNTlmNGF3dGd5NThsb2RiaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lRwWRYpPRtzRBXwta8/giphy.gif)
