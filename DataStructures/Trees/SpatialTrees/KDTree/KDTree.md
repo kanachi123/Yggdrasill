@@ -29,7 +29,7 @@ namespace kd{
 constexpr int n = 10;//R^n
 template<typename T>
 
-    class Kd-Tree
+    class KdTree
     {
         struct Item
         {
