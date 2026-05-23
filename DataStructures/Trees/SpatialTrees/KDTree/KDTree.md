@@ -168,3 +168,7 @@ C) octree
 ![wikipedro](https://upload.wikimedia.org/wikipedia/commons/b/b6/3dtree.png)
 
 ![4d](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmUxZ2syanN6OWh6d2piOHExdXNqM2xqZzI5NTVrdzkwYnc2Y2VzMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4FGyCRpqs7WNEAla/giphy.gif)  
+
+# ***и помните корни дерева нельзя слишком сильно намочить простудится***
+
+![koty](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjRjeGJ1MGlmem1lZmpzaDFtcXh2c2gxdGd0emRlbHNhem1uZXhhaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qiMbLh4WHEZyw/giphy.gif)
