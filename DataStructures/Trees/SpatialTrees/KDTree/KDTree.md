@@ -164,6 +164,6 @@ C) octree
 ✔ ML / embeddings  
 ✔ scientific / simulation data  
 
-![wikipedro](https://upload.wikimedia.org/wikipedia/commons/b/b6/3dtree.png)  
+![wikipedro](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_images/KDtree.png)  
 
-![wikipedro](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_images/KDtree.png)
+![wikipedro](https://upload.wikimedia.org/wikipedia/commons/b/b6/3dtree.png)  
