@@ -70,7 +70,7 @@ template<typename T>
 }
 
 
- ```
+```
 ```
         A
        / \
@@ -91,3 +91,79 @@ height(A) = 2
 
 depth = где я в дереве
 height = насколько “глубокая” ветка подо мной
+
+Где KD-tree реально используется
+1. Игровая индустрия
+    A) AI (NPC / враги)
+        Примеры:
+
+        найти ближайшего врага
+        найти ближайшую цель для атаки
+        выбрать ближайшего союзника для помощи
+        NPC → ищет nearest enemy in radius
+    B) Collision / proximity checks
+    кто рядом друг с другом
+    кто вошёл в зону
+    кто потенциально столкнётся
+    C) Sound / perception systems
+    кто ближе к источнику звука
+    кто “слышит” событие
+    D) Large worlds / open world
+    стриминг объектов вокруг игрока
+    LOD (level of detail) выбор
+2. Графика / rendering
+    A) ray tracing (частично)
+
+    KD-tree похож на BVH (родственник):
+
+    ускорение пересечения лучей
+    поиск ближайших объектов
+    B) point clouds
+    лазерное сканирование (LiDAR)
+    сцены с миллионами точек
+3. Game physics
+    broad phase collision detection
+    поиск объектов в радиусе
+4. AI / Machine Learning
+
+    Очень важное применение:
+
+        nearest neighbor search
+        k-NN алгоритмы
+        similarity search
+
+✔ данные = точки в 2D/3D/nD
+✔ часто нужен nearest neighbor
+✔ много объектов (тысячи / миллионы)
+✔ данные статичны или редко меняются
+
+Когда НЕ использовать KD-tree
+
+❌ часто меняются данные (insert/delete каждый кадр)  
+❌ очень высокие размерности (50+ dims)  
+❌ динамическая сцена с постоянными перестроениями  
+
+Почему в играх часто НЕ KD-tree
+
+Потому что чаще используют:
+
+A) spatial grid
+проще
+быстрее обновляется
+B) BVH
+лучше для dynamic scenes
+стандарт в rendering
+C) octree
+3D partitioning
+хорошо для world streaming
+Где KD-tree лучше всего
+
+✔ static or semi-static point sets  
+✔ nearest neighbor queries  
+✔ AI decision systems  
+✔ ML / embeddings  
+✔ scientific / simulation data  
+
+![wikipedro](https://upload.wikimedia.org/wikipedia/commons/b/b6/3dtree.png)  
+
+![wikipedro](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_images/KDtree.png)
