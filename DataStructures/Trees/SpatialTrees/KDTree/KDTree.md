@@ -33,7 +33,7 @@ template<typename T>
     {
         struct Item
         {
-            vector<int> key;//in constructor resize to R^n,the key of element/в конструкторе мерность мерность ключей определяющих сам элемент переопределим в конструкторе
+            vector<int> key;//in constructor resize to R^n,the key of element/в конструкторе мерность ключей определяющих сам элемент переопределим в конструкторе
             char *info;//base info
         };
         struct node
@@ -49,9 +49,6 @@ template<typename T>
             }
 
     }
-
-
-
 }
 
 
