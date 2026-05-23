@@ -31,13 +31,11 @@ template<typename T>
 
     class KdTree
     {
-        struct Item
+        
+        struct node
         {
             vector<int> key;//in constructor resize to R^n,the key of element/в конструкторе мерность ключей определяющих сам элемент переопределим в конструкторе
             std::unique_ptr<T> info;//base info
-        };
-        struct node
-        {
             std::unique_ptr<Item> item;//остальное как у обычных деревьев
             std::unique_ptr<Node> left;
             std::unique_ptr<Node> right;
