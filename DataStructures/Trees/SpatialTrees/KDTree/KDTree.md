@@ -46,6 +46,24 @@ template<typename T>
                 key.resize(n);
             }
 
+            /* 
+                insert,search,nearest neighbor,remove я не хочу реализовать реализуйте сами
+                токо разберу главную фишку
+
+                axis = depth % N;
+                при двумерном kd (x, y)
+                depth = 0
+                меняем по оси при сравнения почередно как шахматную доску
+                depth=0 -> if (point.x < node.x)
+                depth=1 -> if (point.y < node.y)
+                depth=2 -> снова репит if (point`.x < node.x)
+
+                точки выбираем по локальной медиане округляя
+
+            */
+
+
+
     }
 }
 
