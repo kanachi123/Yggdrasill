@@ -100,10 +100,166 @@ class QuadTree{
                 */
             public:
             Node() = default;   
+
+            /*
+            база по квадтри
+
+            Node
+            Bounds
+            Insert
+            Subdivide
+            Query
+            Capacity 
+
+            
+            
+            */
         };
 
+        /* 
+        
+    мне лень писать вот от ии под этим
+    #pragma once
 
-}
+    #include <memory>
+    #include <vector>
+    #include <any>
+    #include <array>
+
+    namespace quad {
+
+    class QuadTree {
+
+    private:
+
+        struct Rect {
+            float x{};
+            float y{};
+            float width{};
+            float height{};
+
+            bool contains(float px, float py) const;
+            bool intersects(const Rect& other) const;
+        };
+
+        class Node {
+
+        private:
+
+            Rect bounds;
+
+            std::unique_ptr<Node> northWest;
+            std::unique_ptr<Node> northEast;
+            std::unique_ptr<Node> southWest;
+            std::unique_ptr<Node> southEast;
+
+            std::vector<std::any> objects;
+
+            std::size_t depth{};
+
+        public:
+
+            static constexpr std::size_t CAPACITY  = 4;
+            static constexpr std::size_t MAX_DEPTH = 8;
+
+        public:
+
+            explicit Node(
+                const Rect& bounds,
+                std::size_t depth = 0
+            );
+
+            ~Node() = default;
+
+        public:
+
+            bool isLeaf() const;
+
+            bool empty() const;
+
+            std::size_t size() const;
+
+        public:
+
+            void subdivide();
+
+            void merge();
+
+            void clear();
+
+        public:
+
+            bool insert(
+                std::any object,
+                float x,
+                float y
+            );
+
+            bool remove(
+                float x,
+                float y
+            );
+
+        public:
+
+            std::vector<std::any> query(
+                const Rect& range
+            ) const;
+
+            void query(
+                const Rect& range,
+                std::vector<std::any>& result
+            ) const;
+
+        public:
+
+            void traverse() const;
+
+            void debugDraw() const;
+
+        public:
+
+            const Rect& getBounds() const;
+
+            std::size_t getDepth() const;
+        };
+
+    private:
+
+        std::unique_ptr<Node> root;
+
+    public:
+
+        explicit QuadTree(
+            const Rect& worldBounds
+        );
+
+        ~QuadTree() = default;
+
+    public:
+
+        void clear();
+
+        bool insert(
+            std::any object,
+            float x,
+            float y
+        );
+
+        std::vector<std::any> query(
+            const Rect& range
+        ) const;
+
+        void debugDraw() const;
+    };
+
+    } 
+*/
+
+
+
+
+};
 
 }
 
