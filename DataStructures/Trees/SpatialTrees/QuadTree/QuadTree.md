@@ -45,7 +45,6 @@ namespace quad{
 
 
 class QuadTree{
-    template<typename T>
         class Node{
             std::unique_ptr<Node> northWest;
             std::unique_ptr<Node> northEast;
@@ -68,7 +67,8 @@ class QuadTree{
                 Node<T, 8>  oct 
             */
             /* но это квадтри по этому не к месту,мы же обсуждаем частный случай,иначе пришлось бы удалить папку по octTree */
-            std::vector<T> key;
+
+            std::vector<std::any> objects;//хранение любых типов в одном векоре
             public:
             Node():northWest(nullptr),northEast(nullptr),southWest(nullptr),southEast(nullptr) {}
             Node()    
