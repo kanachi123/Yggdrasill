@@ -77,7 +77,7 @@ class QuadTree{
 
                 }
 
-                можно и сделать по другому черещ полиморфизм сделать 
+                можно и сделать по другому через полиморфизм сделать 
                 class Object {
                     public:
                         virtual ~Object() = default;
