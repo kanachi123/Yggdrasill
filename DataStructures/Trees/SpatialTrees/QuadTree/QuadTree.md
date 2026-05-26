@@ -133,13 +133,14 @@ class QuadTree{
     private:
 
         struct Rect {
-            float x{};
-            float y{};
-            float width{};
-            float height{};
+            делим мир на полскость  коорлинатами и размерами ячеек в которых будут хранится данные
+            float x{};//координата ячейки по оси x
+            float y{};//координата ячейки по оси y
+            float width{};//длина ячейки
+            float height{};//высота ячейки
 
-            bool contains(float px, float py) const;
-            bool intersects(const Rect& other) const;
+            bool contains(float px, float py) const;//проверяем обьект находится ли в этом узле 
+            bool intersects(const Rect& other) const;и стоит ли туда заходить 
         };
 
         class Node {
@@ -148,19 +149,19 @@ class QuadTree{
 
             Rect bounds;
 
-            std::unique_ptr<Node> northWest;
+            std::unique_ptr<Node> northWest;//поля потомков
             std::unique_ptr<Node> northEast;
             std::unique_ptr<Node> southWest;
             std::unique_ptr<Node> southEast;
 
-            std::vector<std::any> objects;
+            std::vector<std::any> objects;//сами данные
 
             std::size_t depth{};
 
         public:
 
-            static constexpr std::size_t CAPACITY  = 4;
-            static constexpr std::size_t MAX_DEPTH = 8;
+            static constexpr std::size_t CAPACITY  = 4;сколько обьектов можно хранить до деления чисто проверка
+            static constexpr std::size_t MAX_DEPTH = 8;//чтобы процессор не сгорел от бесконечных чилдренов и делении subdiv
 
         public:
 
@@ -173,17 +174,17 @@ class QuadTree{
 
         public:
 
-            bool isLeaf() const;
+            bool isLeaf() const;//проверка на то нет ли детей
 
-            bool empty() const;
+            bool empty() const;//проверка пустоты самых данных
 
             std::size_t size() const;
 
         public:
 
-            void subdivide();
+            void subdivide();//само деление
 
-            void merge();
+            void merge();//слить все в один лист если удалил например детей
 
             void clear();
 
