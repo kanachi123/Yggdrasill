@@ -258,6 +258,125 @@ class QuadTree{
 */
 
 
+/* 
+
+#pragma once
+
+#include <memory>
+#include <vector>
+
+namespace quad {
+
+template<typename T>
+class QuadTree {
+public:
+
+    struct Rect {
+        float x, y;
+        float w, h;
+
+        bool contains(float px, float py) const {
+            return px >= x && px <= x + w &&
+                   py >= y && py <= y + h;
+        }
+
+        bool intersects(const Rect& o) const {
+            return !(o.x > x + w || o.x + o.w < x ||
+                     o.y > y + h || o.y + o.h < y);
+        }
+    };
+
+private:
+
+    struct Node {
+        Rect bounds;
+        std::vector<T> objects;
+
+        std::unique_ptr<Node> nw, ne, sw, se;
+
+        bool divided = false;
+
+        Node(const Rect& b) : bounds(b) {}
+    };
+
+    std::unique_ptr<Node> root;
+
+    static constexpr size_t CAPACITY = 4;
+
+public:
+
+    explicit QuadTree(const Rect& world)
+        : root(std::make_unique<Node>(world)) {}
+
+    void insert(Node* node, const T& obj, float x, float y) {
+        if (!node->bounds.contains(x, y))
+            return;
+
+        if (node->objects.size() < CAPACITY && !node->divided) {
+            node->objects.push_back(obj);
+            return;
+        }
+
+        if (!node->divided)
+            subdivide(node);
+
+        insert(node->nw.get(), obj, x, y);
+        insert(node->ne.get(), obj, x, y);
+        insert(node->sw.get(), obj, x, y);
+        insert(node->se.get(), obj, x, y);
+    }
+
+    void insert(const T& obj, float x, float y) {
+        insert(root.get(), obj, x, y);
+    }
+
+    void subdivide(Node* node) {
+        float x = node->bounds.x;
+        float y = node->bounds.y;
+        float w = node->bounds.w / 2;
+        float h = node->bounds.h / 2;
+
+        node->nw = std::make_unique<Node>(Rect{x,     y,     w, h});
+        node->ne = std::make_unique<Node>(Rect{x + w, y,     w, h});
+        node->sw = std::make_unique<Node>(Rect{x,     y + h, w, h});
+        node->se = std::make_unique<Node>(Rect{x + w, y + h, w, h});
+
+        node->divided = true;
+    }
+
+    void query(Node* node, const Rect& range, std::vector<T>& out) const {
+        if (!node || !node->bounds.intersects(range))
+            return;
+
+        for (const auto& obj : node->objects)
+            out.push_back(obj);
+
+        query(node->nw.get(), range, out);
+        query(node->ne.get(), range, out);
+        query(node->sw.get(), range, out);
+        query(node->se.get(), range, out);
+    }
+
+    std::vector<T> query(const Rect& range) const {
+        std::vector<T> result;
+        query(root.get(), range, result);
+        return result;
+    }
+};
+
+}
+
+можно разобрать этот ко, но мне лень базовую можно писать,не идеально это готовый код для изучения
+по сути идея не меняется
+
+а это версия от ии разберите и сравиваейте сами
+
+а внизу уже готовая программа которую писал когда то,а это "идеальная" версия
+
+
+*/
+
+
 
 
 };
