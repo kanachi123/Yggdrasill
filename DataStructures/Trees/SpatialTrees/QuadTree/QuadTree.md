@@ -206,7 +206,7 @@ class QuadTree{
             std::vector<std::any> query(
                 const Rect& range
             ) const;
-
+            //если не пересекается с областью скипаем ноду чтобы не пройтись по всему дереву и экономить ресурсы
             void query(
                 const Rect& range,
                 std::vector<std::any>& result
@@ -214,9 +214,9 @@ class QuadTree{
 
         public:
 
-            void traverse() const;
+            void traverse() const;//обход по дереву просто форичим
 
-            void debugDraw() const;
+            void debugDraw() const;//не обязательно,визуализацмя границ 
 
         public:
 
