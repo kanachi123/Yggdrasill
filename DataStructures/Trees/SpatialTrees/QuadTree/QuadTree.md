@@ -97,7 +97,7 @@ class QuadTree{
             public:
             Node():northWest(nullptr),northEast(nullptr),southWest(nullptr),southEast(nullptr) {}
             Node()    
-        }
+        };
 
 
 }
