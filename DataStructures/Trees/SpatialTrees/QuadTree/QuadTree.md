@@ -595,13 +595,21 @@ struct Quadtree {
     }
 
     void insert(particle* p) {
+
         if (!contains(*p)) return;
-        if (particles.size() < capacity) {
+        
+        if (particles.size() < capacity && !divided) {
             particles.push_back(p);
-        } else {
-            if (!divided) subdivide();
-            nw->insert(p); ne->insert(p); sw->insert(p); se->insert(p);
+            return;
         }
+        if (!divided) subdivide();
+
+        if (nw && nw->contains(*p)) nw->insert(p);//если есть место вставляем
+        if (ne && ne->contains(*p)) ne->insert(p);//если нет пытаемся там где пусто
+        if (sw && sw->contains(*p)) sw->insert(p);//или здесь если занято
+        if (se && se->contains(*p)) se->insert(p);//эй так места не останется
+        particles.push_back(p);//ну хоть здесь есть место
+        
     }
 
     void query(float qx, float qy, float qr, vector<particle*>& found) const {
