@@ -73,6 +73,12 @@ class QuadTree{
             /*
                 как доставать...
                 auto& value = std::any_cast<MyClass&>(objects[i]); 
+
+                проверка типа так
+                if(objects[i].type() == typeid(MyClass))
+                {
+                    
+                }
                 
                 */
             public:
