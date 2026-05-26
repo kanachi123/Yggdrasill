@@ -69,6 +69,12 @@ class QuadTree{
             /* но это квадтри по этому не к месту,мы же обсуждаем частный случай,иначе пришлось бы удалить папку по octTree */
 
             std::vector<std::any> objects;//хранение любых типов в одном векоре
+
+            /*
+                как доставать...
+                auto& value = std::any_cast<MyClass&>(objects[i]); 
+                
+                */
             public:
             Node():northWest(nullptr),northEast(nullptr),southWest(nullptr),southEast(nullptr) {}
             Node()    
