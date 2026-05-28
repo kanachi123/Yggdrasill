@@ -118,7 +118,7 @@ class RTree{
     size_t maxEntries = 8;
     size_t minEntries = 4;
     public:
-    void insert();
+    void insert(const Rect& rect, T* data);
 
 }
 
