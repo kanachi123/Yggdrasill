@@ -190,4 +190,6 @@ SciPy,Open3D,PyQuadTree...
 
 может если когда то не будет лень,я снова открою этот файл и напишу имплементацию,но сейчас мне лень
 
-например ты пишешь симулятор жидкости и уравнения навье стокса слишком сложные итд и нужно оптимизировать под объем
+например ты пишешь симулятор жидкости и уравнения навье стокса слишком сложные итд и нужно оптимизировать под объем  
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXJqbDFya3B3dWh6YjNiOXFnd3MwZWUzZWh3aHpzNm5ibTM3YXIzYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l2JhwdnrGvfnoXrzi/giphy.gif)
