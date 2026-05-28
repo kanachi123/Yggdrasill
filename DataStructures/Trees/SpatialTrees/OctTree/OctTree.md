@@ -152,3 +152,8 @@ ray tracing
 3)
 Расчет притяжения происходит всего за 1 операцию вместо миллиардов.  
 ```
+
+![](https://upload.wikimedia.org/wikipedia/commons/b/bd/3bodies.png)
+
+![](https://lmb.informatik.uni-freiburg.de/people/tatarchm/ogn/thumbnail.png)
+
