@@ -96,15 +96,19 @@ namespace R{
         Rect merge(const Rect& other);
     };
 
-template<typename SplitStrategy>
+template<typename T>
 class RTree{
     
     struct Node{
-        
+        bool leaf;//чтобы понять лист ли это или нет
+        std::vector<Entry> entries;//храним сами ноды с их подмножествами
     };
     struct Entry{
-        Rect rect;
-        Node* child;
+        Rect rect;//сам прямоугольник
+        union{
+            Node* child;//его потомок которую он хранит
+            T data;
+        };//по значению leaf выбеерем union либо значение либо прямоугольник
     };
     public:
     void insert();
