@@ -110,6 +110,10 @@ class RTree{
             T* data;
         };//по значению leaf выбеерем union либо значение либо прямоугольник
     };
+    
+    std::unique_ptr<Node> root = nullptr;
+    size_t maxEntries = 8;
+    size_t minEntries = 4;
     public:
     void insert();
 
