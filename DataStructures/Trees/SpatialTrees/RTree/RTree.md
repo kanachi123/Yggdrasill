@@ -107,7 +107,7 @@ class RTree{
         Rect rect;//сам прямоугольник
         union{
             Node* child;//его потомок которую он хранит
-            T data;
+            T* data;
         };//по значению leaf выбеерем union либо значение либо прямоугольник
     };
     public:
