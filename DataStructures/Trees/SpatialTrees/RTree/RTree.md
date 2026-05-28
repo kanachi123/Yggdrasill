@@ -102,6 +102,9 @@ class RTree{
     struct Node{
         bool leaf;//чтобы понять лист ли это или нет
         std::vector<Entry> entries;//храним сами ноды с их подмножествами
+
+        std::unique_ptr<Node> parent = nullptr;
+
     };
     struct Entry{
         Rect rect;//сам прямоугольник
