@@ -88,23 +88,31 @@ R*-tree попялярнее как сын маминой подруги по э
 
 namespace R{
 
-
-
     struct Rect{
         float minX,minY;
         float maxX,maxY;
+        bool intersects(const Rect& other);
+        float area();
+        Rect merge(const Rect& other);
     };
 
 template<typename SplitStrategy>
 class RTree{
-    struct Entry;
-    struct Node;
+    
+    struct Node{
+        
+    };
+    struct Entry{
+        Rect rect;
+        Node* child;
+    };
+    public:
+    void insert();
 
 }
 
 
 
 }
-
 
 ```
