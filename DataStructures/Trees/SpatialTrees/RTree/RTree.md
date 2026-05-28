@@ -81,3 +81,30 @@ nearest neighbor.
 
 R*-tree попялярнее как сын маминой подруги по этому я не буду уголублятся кому интересно тот азиат
 ```
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXVmdHhxOHFncnc3aXJtcXR2cjE5ZjlzNWVraDh0M2MzNWloeDZzZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduFd65ni3y7JKYU/giphy.gif)
+
+```cpp
+
+namespace R{
+
+
+
+    struct Rect{
+        float minX,minY;
+        float maxX,maxY;
+    };
+
+template<typename SplitStrategy>
+class RTree{
+    struct Entry;
+    struct Node;
+
+}
+
+
+
+}
+
+
+```
