@@ -184,3 +184,6 @@ C++ — основной язык для 3D-движков, робототехн
 **CGAL (Computational Geometry Algorithms Library)**
 Для чего: Сложная вычислительная геометрия и академические задачи.
 Что внутри: Пакет 3D Fast Intersection and Distance Computation. Библиотека тяжелая, но математически эталонная.
+
+**python**  
+SciPy,Open3D,PyQuadTree...
