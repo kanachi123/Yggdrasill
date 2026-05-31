@@ -109,8 +109,8 @@ class RTree{
     struct Entry{
         Rect rect;//сам прямоугольник
         union{
-            Node* child;//его потомок которую он хранит
-            T* data;
+            std::unique_ptr<Node> child;//его потомок которую он хранит
+            std::unique_ptr<T> data;
         };//по значению leaf выбеерем union либо значение либо прямоугольник
     };
     
