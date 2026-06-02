@@ -27,6 +27,7 @@ Ball Tree рекурсивно разбивает множество точек 
          ... ...          ...  ...
 ```  
 
+## **Срез шара**  
 ![qw](https://stevehanov.ca/blog/images/ee2e5caf33bad25db581a898a120af9d85245d2b135d8adcd7a0125f4cbb774f.png)
 
 
