@@ -4,23 +4,22 @@
 
 **Coupling бывает разных видов**
  
- Data,Stamp,Control,External,Common,Content,Temporal,Sequential
+ Data,Stamp,Control,External,Common,Content,Temporal,Sequential,Communicational,Functional,
+ Data-Structured,Interaction,Component
 
 
-## представим такую систему car,engine,wheels 
+
+```
+
+Data - это такая связанность при котором два компонента дают только необходимые простые данные(именно простые,то что нужно не больше),чаще всего это low coupling  
+
+Stamp - это такая связанность при котором мы передаем компоненту целую структуру или обьект,хотя нам нужно лишь часть этого компонента  
+
+Control - это такая связанность при котором один компонент дает другому компоненту данные для изменения ее состояния(например дескрипторы,хендлеры,конечные автоматы,перечисления,цепи Маркова)  
 
 
-```cpp
 
-class car{
-    std::unique_ptr<Engine> engine;
-    std::unique_ptr<Wheels> wheels;
-    public:
-    car(){};
-}
-
-
-```  
+```
 
 
 
