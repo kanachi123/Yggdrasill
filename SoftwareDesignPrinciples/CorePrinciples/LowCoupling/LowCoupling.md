@@ -140,5 +140,41 @@ class Handler{
 
 }
 
+```
+
+
+## External coupling 
+
+```cpp
+
+// simpleFramework.hpp
+
+#pragma once
+#include <SimpleFramework.h>
+
+System::System{
+        //another metods etc implemetations
+}
+
+///-----------///
+
+//in main
+
+#include <Simpleframework.hpp>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
+
+class systemStrategy : public System{ //external coupling
+    public:
+    void strategy();
+}
+
+int main(){
+    //...
+}
+
+
+
 
 ```
