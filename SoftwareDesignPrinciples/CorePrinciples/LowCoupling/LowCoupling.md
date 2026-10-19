@@ -6,7 +6,7 @@
  
  Data,Stamp,Control,External,Common,Content,Temporal,Sequential,Communicational,Functional,Interaction,Component
 
-## **Для начала определение каждого из них,а потом подробное обяснение**  
+## **Для начала определение каждого из них потом подробное обяснение**  
 
 Data - это такая связанность при котором два компонента дают только необходимые простые данные(именно простые,то что нужно не больше),чаще всего это low coupling  
 
@@ -46,4 +46,99 @@ Component - это такая связанность при котором ви�
 
 ```
 то есть нет жесткой связанности через реализацию или через передачу целого компонента как в других связанностях
+```  
+## Stamp coupling
+
+**здесь передача может быть непрямой и мы входим в внутренную структуру мы берем целую структуру обьект итд и передеаем полностью чтобы взять одну вещь**
+
+-передай гаечный ключ
+-а как через data coupling или stamp coupling?
+-через Stamp
+-вот рюкзак в ней чемодан с гаечным ключем
+-тогда data
+-вот ключ возьми
+
+```cpp
+
+#include <renderig.hpp>
+
+// mini shit programm,but kiss 
+
+Window window;//global -> Common coupling
+
+class Point{
+    int x,y;
+    int_32 color;
+
+    public:
+    Point()= default;
+    //geters,seters
+    }
+
+Pair<double,double> move(const &Point point){
+
+    return {++(point.first),++(point.second)}  
+}
+
+int main(){
+
+    
+    unique_ptr<point> Point;
+
+    while(window.open()){//control coupling
+
+        auto [x,y] = move(Point);//stamp coupling
+
+        //data coupling and stamp coupling
+        draw(&window,&x,&y,&shape);
+    }
+}
+
+```
+
+## Control coupling 
+
+**Есть ситуации когда нужно передать флаг решающий состояние например ивенты или дескрипторы,но через структуры и перечисления удобнее ну либо классы**
+
+```cpp
+
+
+
+typedef enum {CREATE,READ,UPDATE,DELETE} CRUD;
+class Descriptor{
+    CRUD flag;
+    public:
+    Descriptor()=default;
+    CRUD getFlag()const{
+        return flag;
+    }
+    void setFlag(CRUD flag){
+        this->flag = flag;
+    }
+};
+
+class Handler{
+
+    std::unique_ptr<Descriptor> des;
+    public:
+
+    Handler(const Descritor& des):des(std::make_unique<Descriptor>(des)){};
+
+    //implemetation CRUD
+    //...
+    
+    void Choice(){
+        switch(des->getFlag()){
+            case CREATE: Create();break;
+            case READ: Read();break;
+            case UPDATE: Update();break;
+            case DELETE: Delete();break;
+            default:break;
+        }
+
+    } 
+
+}
+
+
 ```
