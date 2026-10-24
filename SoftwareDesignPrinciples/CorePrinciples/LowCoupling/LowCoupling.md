@@ -173,7 +173,45 @@ class systemStrategy : public System{ //external coupling
 int main(){
     //...
 }
+```  
 
+## Common coupling 
+
+//shit code,but a good example...
+
+```cpp
+
+uint8_t r;
+uint8_t g;
+uint8_t b;
+Color::Color buffer[];
+static poopCount = 0;
+
+class Renderer{
+    
+    public:
+    Renderer(const Window& wind){
+        wind->setDisplay(buffer);
+        poopCount++;//common coupling
+
+    };
+};
+
+uint8_t Event::getR(){
+    return r;
+}
+
+class Window{
+    public:
+        Window(const Event& event){
+            poopCount++;
+            int i = 0;
+            for(const auto& it : event){
+                buffer[i++] = Color::Pixel(it->getR(),it->getG(),it->getB());//common coupling
+            }
+
+        };
+}
 
 
 
