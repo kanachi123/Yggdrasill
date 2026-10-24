@@ -189,12 +189,12 @@ static int poopCount = 0;
 
 struct constants{
 
-    constexpr float T0 = std::numbers::pi * 2;
-    constexpr float T1 = std::numbers::pi;
-    constexpr float T2 = std::numbers::pi / 2.f;
-    constexpr float T3 = std::numbers::pi/3.f;
-    constexpr float T4 = std::numbers::pi/4.f;
-    constexpr float T5 = std::numbers::pi / 6.f;
+    static constexpr float T0 = std::numbers::pi * 2;
+    static constexpr float T1 = std::numbers::pi;
+    static constexpr float T2 = std::numbers::pi / 2.f;
+    static constexpr float T3 = std::numbers::pi/3.f;
+    static constexpr float T4 = std::numbers::pi/4.f;
+    static constexpr float T5 = std::numbers::pi / 6.f;
 };
 
 
