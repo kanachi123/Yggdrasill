@@ -187,12 +187,22 @@ uint8_t b;
 Color::Color buffer[];
 static int poopCount = 0;
 
+struct constants{
+
+    constexpr float T0 = std::numbers::pi * 2;
+    constexpr float T1 = std::numbers::pi;
+    constexpr float T2 = std::numbers::pi / 2.f;
+    constexpr float T3 = std::numbers::pi/3.f;
+    constexpr float T4 = std::numbers::pi/4.f;
+    constexpr float T5 = std::numbers::pi / 6.f;
+};
+
 
 void update_rgb(const Event& event){
 
-    r = event->getNewR();
-    g = event->getNewG();
-    b = event->getNewB();
+    r = event->getNewR() * T1;//common Coupling
+    g = event->getNewG() * T3 + T1; // common Coupling
+    b = event->getNewB() * T5 - T4;
 }
 
 class Renderer{
