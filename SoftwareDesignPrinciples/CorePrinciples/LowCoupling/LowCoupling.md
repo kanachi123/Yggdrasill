@@ -187,6 +187,14 @@ uint8_t b;
 Color::Color buffer[];
 static int poopCount = 0;
 
+
+void update_rgb(const Event& event){
+
+    r = event->getNewR();
+    g = event->getNewG();
+    b = event->getNewB();
+}
+
 class Renderer{
     
     public:
@@ -196,10 +204,6 @@ class Renderer{
 
     };
 };
-
-uint8_t Event::getR(){
-    return r;
-}
 
 class Window{
     
@@ -211,7 +215,8 @@ class Window{
         void update(const Event& event){
             int i = 0;
             for(const auto& it : event){
-                buffer[i++] = Color::Pixel(it->getR(),it->getG(),it->getB());//common coupling
+                update_rgb(event);//common coupling
+                buffer[i++] = Color::Pixel(r,g,b);//common coupling
             }
         }
 }
