@@ -209,7 +209,7 @@ class Window{
     
     public:
         Window(){
-            poopCount++;
+            poopCount++;//common coupling
         };
 
         void update(const Event& event){
