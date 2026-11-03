@@ -234,3 +234,27 @@ class Window{
 
 
 ```
+
+## Content coupling
+
+
+возмем как пример асемблер с его процедурами,представим что у нас есть две процедуры и опреатор jmp
+
+```asm
+
+SSEG SEGMENT STACK
+    DW 128 DUP(?)
+SSEG ENDS
+
+CSEG SEGMENT
+    ASSUME CS:CSEG,SS:SSEG
+
+PUSH_STACK PROC NEAR
+    PUSH CX;
+    PUSH DX;
+
+PROC1:
+
+```
+
+
