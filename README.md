@@ -1,6 +1,7 @@
 # documentation of software engineering and computer sciense or and related topics  
 
-'''As for English translation, 
+```
+As for English translation, 
 I am still working on improving 
 my English proficiency; 
 writing complex texts 
@@ -8,7 +9,7 @@ and speaking remain difficult,
 though my comprehension is 
 gradually getting better, 
 and my accent is fading  
-'''
+```
 
 ## мини документация по ключевым темам из se и cs(смежных областей)
 *Все это будет для обычных нубов,чайников,кипятильников,кофемашин итд.Если вы душните про неточные определения,то можно апеллировать до проблемы абстракции/апроксимации(короче ряд Тейлора против синуса)*
