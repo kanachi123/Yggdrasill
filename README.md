@@ -11,6 +11,18 @@ gradually getting better,
 and my accent is fading  
 ```
 
+####
+
+All of this is intended for total noobs, newbies, greenhorns, absolute beginners, and so on. If you’re going to nitpick about imprecise definitions, I could point to the problem of abstraction/approximation (think: Taylor series vs. the sine function)—but honestly, I can’t be bothered to provide strictly academic definitions; that’s a whole philosophical discussion—post-positivism, perhaps—which belongs in a different setting. Here, you’ll find only code and Markdown files with diagrams. I’ll commit topics gradually, without overexerting myself.
+
+As for programming languages, I’ll primarily stick to C++, C, Rust, Python, and... Latin.
+
+Or, as Deadpool would say:
+
+Grab your balls and get to it.
+
+
+
 ## мини документация по ключевым темам из se и cs(смежных областей)
 *Все это будет для обычных нубов,чайников,кипятильников,кофемашин итд.Если вы душните про неточные определения,то можно апеллировать до проблемы абстракции/апроксимации(короче ряд Тейлора против синуса)*
 *мне лень определять чисто академично,*
