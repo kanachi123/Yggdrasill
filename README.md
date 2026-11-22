@@ -1,7 +1,6 @@
 # documentation of software engineering and computer sciense or and related topics  
 
-'''
-As for English translation, 
+'''As for English translation, 
 I am still working on improving 
 my English proficiency; 
 writing complex texts 
